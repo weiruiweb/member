@@ -1,0 +1,78 @@
+<!--login.wxml-->
+<view id="credit">
+	<view class="credit_top flexRowBetween">
+		<view class="today_income">
+			<image src="/images/incom_icon.png"></image>
+			<view>
+				<text>今日收入</text><text class="text1">5笔</text>
+			</view>
+			<view class="total">公计210笔</view>
+		</view>
+		<view class="month_income">
+			<image src="/images/incom_icon.png"></image>
+			<view>
+				<text>今日收入</text><text class="text1">5笔</text>
+			</view>
+			<view class="total">公计210笔</view>
+		</view>
+	</view>
+	<view class="cre_detail">
+		<image src="/images/incom_icon1.jpg"></image>
+		<text>收入详情</text>
+	</view>
+	<view class="credit_list flexRowBetween">
+		<view class="cre_data">
+			2015-5-3
+		</view>
+		<view class="adrees">
+			小小一
+		</view>
+		<view class="credit_number">
+			+800
+		</view>
+	</view>
+	<view class="credit_list flexRowBetween">
+		<view class="cre_data">
+			2015-5-3
+		</view>
+		<view class="adrees">
+			小小一
+		</view>
+		<view class="credit_number">
+			+800
+		</view>
+	</view>
+	<view class="credit_list flexRowBetween">
+		<view class="cre_data">
+			2015-5-3
+		</view>
+		<view class="adrees">
+			小小一
+		</view>
+		<view class="credit_number">
+			+800
+		</view>
+	</view>
+	<view class="credit_list flexRowBetween">
+		<view class="cre_data">
+			2015-5-3
+		</view>
+		<view class="adrees">
+			小小一
+		</view>
+		<view class="credit_number">
+			+800
+		</view>
+	</view>
+	<view class="credit_list flexRowBetween">
+		<view class="cre_data">
+			2015-5-3
+		</view>
+		<view class="adrees">
+			小小一
+		</view>
+		<view class="credit_number">
+			+800
+		</view>
+	</view>
+</view>

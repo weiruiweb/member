@@ -1,0 +1,17 @@
+<!--comment.wxml-->
+<view class="comment">
+	<text>
+		请写下您的意见和建议
+	</text>
+	<textarea palceholder="请写下您的意见和建议">
+	</textarea>
+	<text>
+		请留下您的联系方式
+	</text>
+	<textarea palceholder="请写下您的意见和建议" style="height:100rpx;">
+	</textarea>
+	
+</view>
+<view class="submit_info">
+	提交
+</view>

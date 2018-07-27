@@ -1,12 +1,47 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/user/user",
+    "pages/merchant/merchant",
+    "pages/login/login",
+    "pages/password/password",
+    "pages/userInfor/userInfor",
+    "pages/credit/credit",
+    "pages/about/about",
+    "pages/message/message",
+    "pages/comment/comment",
+    "pages/incomRecord/incomRecord",
+    "pages/cash/cash",
+    "pages/qcorde/qcorde",
+    "pages/Mmessage/Mmessage",
+    "pages/merchentType/merchentType",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "资产管理公司",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"/images/navbar1.jpg",
+      "selectedIconPath":"/images/navbar1-a.jpg"
+    }, {
+      "pagePath": "pages/merchant/merchant",
+      "text": "商家",
+      "iconPath":"/images/navbar2.jpg",
+      "selectedIconPath":"/images/navbar2-a.jpg"
+    },{
+      "pagePath":"pages/user/user",
+      "text": "我的",
+      "iconPath":"/images/navbar3.jpg",
+      "selectedIconPath":"/images/navbar3-a.jpg"
+    }],
+    "borderStyle": "#505050",
+    "color":"#666",
+    "selectedColor":"#17abaa"
   }
 }

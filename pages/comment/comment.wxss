@@ -1,0 +1,20 @@
+.comment{
+	padding:75rpx 60rpx;
+}
+.comment text{
+	font-size:30rpx;
+	color:#000;
+}
+.comment textarea{
+	width:623rpx;
+	height:300rpx;
+	margin:45rpx 0rpx 66rpx;
+	border:solid 1px #585858;
+}
+.contact{
+	height:100rpx;
+}
+.submit_info{
+	position:absolute;
+	bottom:100rpx;
+}

@@ -1,0 +1,15 @@
+.credit_list{
+	height:90rpx;
+	line-height:90rpx;
+	border-bottom:solid 1px #eaeaea;
+	padding:0rpx 78rpx 0rpx 44rpx;
+	background:#fff;
+}
+.cre_data{
+	width:340rpx;
+	color:#585858;
+	font-size:28rpx;}
+.credit_list image{
+	width:11rpx;
+	height:20rpx;
+}

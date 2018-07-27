@@ -1,0 +1,26 @@
+<!--Mess.wxml-->
+<view class="credit_list flexRowBetween" bindtap="income">
+	<view class="cre_data">
+		查看收入详情
+	</view>
+	
+	<view class="">
+		<image src="/images/next_page.jpg"></image>
+	</view>
+</view>
+<view class="credit_list flexRowBetween" bindtap="credit">
+	<view class="cre_data">
+		查看积分详情
+	</view>
+	<view class="">
+		<image src="/images/next_page.jpg"></image>
+	</view>
+</view>
+<view class="credit_list flexRowBetween" bindtap="cash">
+	<view class="cre_data">
+		查看提现详情
+	</view>
+	<view class="">
+		<image src="/images/next_page.jpg"></image>
+	</view>
+</view>

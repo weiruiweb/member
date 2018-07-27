@@ -1,0 +1,33 @@
+
+.about_top{
+	width:632rpx;
+	background:#62d3c7;
+	height:325rpx;
+	padding-top:45rpx;
+	border-radius:20rpx;
+	margin-left:60rpx;
+	margin-top:100rpx;
+	text-align:center;}
+
+.user_img{
+	width:214rpx;
+	height:214rpx;
+	margin:0rpx auto;
+	border-radius:50%;
+	overflow:hidden;
+}
+.user_name{
+	font-size:28rpx;
+	color:#fff;
+	text-align:center;
+	margin-top:36rpx;
+}
+.qcorde{
+	text-align:center;
+	margin-top:135rpx;
+}
+.qcorde image{
+	width:350rpx;
+	height:350rpx;
+
+}

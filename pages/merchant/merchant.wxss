@@ -1,0 +1,31 @@
+.banner{
+	margin-top:9rpx;
+}
+.banner image{
+	width:100%;
+	height:292rpx;
+}
+.userInfo{
+	padding-top:15px;
+	background:#ededed;
+}
+.user_in{
+	width:250rpx;
+	text-align:center;
+	padding:55rpx 0px 45rpx;
+	background:#fff;
+	
+	}
+.user_in image{
+	width:50rpx;
+	height:50rpx;
+	margin-bottom:22rpx;
+}
+.user_in .text{
+	font-size:24rpx;
+	color:#666;
+}
+.user_in{
+	border-right:solid 1px #d1d1d1;
+	border-bottom:solid 1px #d1d1d1;
+}

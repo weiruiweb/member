@@ -1,0 +1,17 @@
+<!--userInfor.wxml-->
+<view class="user_input flexRowBetween">
+	<view class="input_before">姓名</view>
+	<view class="userInput"><input type="text" placeholder="输入姓名"></input></view>
+	
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_before">性别</view>
+	<view class="userInput"><input type="text" placeholder="输入性别"></input></view>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_before">联系方式</view>
+	<view class="userInput"><input type="text" placeholder="输入联系方式"></input></view>
+</view>
+<view class="submit_info">
+	保存
+</view>

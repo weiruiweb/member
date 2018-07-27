@@ -1,0 +1,12 @@
+.about_top{text-align:center;}
+.about_top image{
+	width:632rpx;
+	height:396rpx;
+	marign:0rpx auto;
+}
+.about_cont{
+	margin-top:76rpx;
+	padding:0px 58rpx;
+	color:#262626;
+	font-size:28rpx;
+}

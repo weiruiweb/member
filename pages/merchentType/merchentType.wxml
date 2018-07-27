@@ -1,31 +1,9 @@
-<!--index.wxml-->
-<view class="index_top flexRowBetween">
-  <view class="index_qrcode flexRowBetween">
-      <view class="top_image">
-        <image src="/images/qcord.jpg"></image>
-      </view>
-      <text>扫一扫</text>
-  </view>
-  <view class="index_qrcode index_merchent flexRowBetween" bindtap="merchentType">
-      <view class="top_image">
-        <image src="/images/merchant_icon.jpg"></image>
-      </view>
-      <text>所有商家</text>
-  </view>
+<!--type.wxml-->
+<view class="search">
+  <input placeholder="请输入想查询的学校或类型"></input>
 </view>
-<view class="banner">
-  <image src="/images/banner.jpg"></image>
-</view>
-<view class="activity flexRowBetween">
-    <view class="activity_tlt">
-      活动列表
-    </view>
-    <view class="more">
-      <text>更多</text>
-      <image src="/images/next_page.jpg"></image>
-    </view>
-</view>
-<view class="activity_list" bindtap="detail">
+
+<view class="activity_list">
     <view class="activity_item">
         <view class="activity_name">
           活动一

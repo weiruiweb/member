@@ -1,0 +1,12 @@
+<!--about.wxml-->
+<view class="about_top">
+	<view class="user_img">
+		<open-data type="userAvatarUrl" class="user_pho"></open-data>
+	</view>
+	<view class="user_name">
+		宜家家居
+	</view>
+</view>
+<view class="qcorde">
+	<image src="/images/qcorde_icon1.jpg"></image>
+</view>

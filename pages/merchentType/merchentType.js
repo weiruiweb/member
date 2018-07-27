@@ -11,14 +11,9 @@ Page({
   onLoad: function () {
    
   },
- merchentType:function(){
+ login:function(){
  	wx.navigateTo({
- 		url:'/pages/merchentType/merchentType'
+ 		url:'/pages/login/login'
  	})
- },
- detail:function(){
- 	wx.navigateTo({
- 		url:'/pages/detail/detail'
- 	})
- },
+ }
 })

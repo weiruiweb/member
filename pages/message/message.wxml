@@ -1,0 +1,26 @@
+<!--login.wxml-->
+<view class="credit_list flexRowBetween" style="color:#585858;font-size:28rpx;">
+	我的积分记录
+</view>
+<view class="credit_list flexRowBetween">
+	<view class="cre_data">
+		2015-5-3
+	</view>
+	<view class="adrees">
+		碑林区
+	</view>
+	<view class="credit_number">
+		+800
+	</view>
+</view>
+<view class="credit_list flexRowBetween">
+	<view class="cre_data">
+		2015-5-3
+	</view>
+	<view class="adrees">
+		碑林区
+	</view>
+	<view class="credit_number">
+		+800
+	</view>
+</view>

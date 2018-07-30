@@ -19,7 +19,7 @@
 			<view class="text">我的提现</view>
 		</view>
 	</view>
-	<view class="user_item flexRowBetween">
+	<view class="user_item user_two">
 
 		<view class="user_in" bindtap="qcorde">
 			<image src="/images/user_icon11.png"></image>

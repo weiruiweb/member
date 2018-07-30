@@ -1,3 +1,4 @@
+page{background-color:#ededed;}
 .credit_top{
 	height:330rpx;
 	border-top:solid 1px #e3e3e3;

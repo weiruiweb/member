@@ -39,7 +39,7 @@
 	</view>
 	<view class="user_item flexRowBetween">
 
-		<view class="user_in">
+		<view class="user_in" bindtap="password">
 			<image src="/images/user_icon5.jpg"></image>
 			<view class="text">修改密码</view>
 		</view>

@@ -4,7 +4,7 @@
 </view>
 
 <view class="activity_list">
-    <view class="activity_item">
+    <view class="activity_item" bindtap="detail">
         <view class="activity_name">
           活动一
         </view>
@@ -29,7 +29,7 @@
           </view>
         </view>
     </view>
-    <view class="activity_item">
+    <view class="activity_item" bindtap="detail">
         <view class="activity_name">
           活动一
         </view>

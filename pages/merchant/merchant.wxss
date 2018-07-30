@@ -1,5 +1,7 @@
+page{background-color:#ededed;}
 .banner{
-	margin-top:9rpx;
+	height:292rpx;
+	overflow:hidden;
 }
 .banner image{
 	width:100%;
@@ -8,6 +10,7 @@
 .userInfo{
 	padding-top:15px;
 	background:#ededed;
+	height:100%;
 }
 .user_in{
 	width:250rpx;
@@ -29,3 +32,7 @@
 	border-right:solid 1px #d1d1d1;
 	border-bottom:solid 1px #d1d1d1;
 }
+.user_two .user_in{
+	float:left;
+	width:249rpx;
+	}

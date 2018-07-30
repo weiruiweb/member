@@ -1,6 +1,9 @@
 /**index.wxss**/
+page{background-color:#ededed;}
 .search{
 	text-align:center;
+	background:#fff;
+	padding:15rpx;
 }
 .search input{
 	width:550rpx;

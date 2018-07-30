@@ -1,3 +1,4 @@
+page{background-color:#ededed;}
 .credit_list{
 	height:90rpx;
 	line-height:90rpx;

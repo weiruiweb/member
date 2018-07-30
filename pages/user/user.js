@@ -32,5 +32,10 @@ Page({
   	wx.navigateTo({
   		url:'/pages/comment/comment'
   	})
-  }
+  },
+   password:function(){
+    wx.navigateTo({
+      url:'/pages/password/password'
+    })
+  },
 })

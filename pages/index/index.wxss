@@ -1,6 +1,12 @@
 /**index.wxss**/
+page {
+  display: block;
+  min-height: 100%;
+  background-color:#ededed;
+}
 .index_top{
 	padding:0px 25rpx;
+	background-color:#fff;
 }
 .index_top image{
 	width:48rpx;
@@ -35,6 +41,7 @@
 /***************活动********************/
 .activity{
 	padding:26rpx 25rpx 24rpx 15rpx;
+	background-color:#fff;
 
 }
 .activity_tlt{

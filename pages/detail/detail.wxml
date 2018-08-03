@@ -1,13 +1,13 @@
 <!--detail.wxml-->
 <view class="detail">
-	<image src="/images/banner1.jpg"></image>
+	<image src="{{web_mainData.bannerImg[0].url}}"></image>
 </view>
 <view class="detail_cont">
 	<view class="detail_list">
 		<view class="detail_icon">
 			<image src="/images/detail1.jpg">
 			</image>
-			<view class="text">陕西省西安市高新大都荟</view>
+			<view class="text">{{web_mainData.small_title}}</view>
 		</view>
 
 	</view>
@@ -15,7 +15,7 @@
 		<view class="detail_icon">
 			<image src="/images/detail2.jpg">
 			</image>
-			<view class="text">王先生</view>
+			<view class="text">{{web_mainData.keywords}}</view>
 		</view>
 
 	</view>
@@ -23,12 +23,15 @@
 		<view class="detail_icon">
 			<image src="/images/detail3.jpg">
 			</image>
-			<view class="text">1888888888</view>
+			<view class="text">{{web_mainData.contactPhone}}</view>
 		</view>
 
 	</view>
+	
 	<view class="detail_intro">
-		<view class="text1">宜家家居</view>
-		<view class="text2">主要经营家居。家居饰品主要经营家居。家居饰品主要经营家居。家居饰品主要经营家居。家居饰品主要经营家居。家居饰品主要经营家居。家</view>
+		<view class="content ql-editor" style="color:#666;font-size:24rpx">
+			<import src="../../wxParse/wxParse.wxml"/>
+		    <template is="wxParse" data="{{wxParseData:web_mainData.content}}"/>
+		</view>	
 	</view>
 </view>

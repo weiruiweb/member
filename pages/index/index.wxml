@@ -6,7 +6,7 @@
       </view>
       <text>扫一扫</text>
   </view>
-  <view class="index_qrcode index_merchent flexRowBetween" bindtap="merchentType">
+  <view class="index_qrcode index_merchent flexRowBetween"  data-path="/pages/merchentType/merchentType" bindtap="intoPath" style="width:196rpx">
       <view class="top_image">
         <image src="/images/merchant_icon.jpg"></image>
       </view>
@@ -14,7 +14,13 @@
   </view>
 </view>
 <view class="banner">
-  <image src="/images/banner.jpg"></image>
+   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
+    <block wx:for="{{web_sliderData.info.data[0].mainImg}}" wx:key="id">
+      <swiper-item>
+          <image src="{{item.url}}" />
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
 <view class="activity flexRowBetween">
     <view class="activity_tlt">
@@ -25,56 +31,34 @@
       <image src="/images/next_page.jpg"></image>
     </view>
 </view>
-<view class="activity_list" bindtap="detail">
-    <view class="activity_item">
-        <view class="activity_name">
-          活动一
-        </view>
-        <view class="activity_cont flexRowBetween">
-          <view class="activity_img">
-            <image src="/images/active1.jpg"></image>
-          </view>
-          <view class="activity_infor">
-            <view class="discont">宜家家居会员专属全场八折</view>
-            <view class="shop">
-              <image src="/images/index_icon1.jpg"></image>
-              <text>西安宜家家居</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon2.jpg"></image>
-              <text>高新大都荟20楼</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon3.jpg"></image>
-              <text>刘经理</text><text>416546846868</text>
-            </view>
-          </view>
-        </view>
-    </view>
-    <view class="activity_item">
-        <view class="activity_name">
-          活动一
-        </view>
-        <view class="activity_cont flexRowBetween">
-          <view class="activity_img">
-            <image src="/images/active1.jpg"></image>
-          </view>
-          <view class="activity_infor">
-            <view class="discont">宜家家居会员专属全场八折</view>
-            <view class="shop">
-              <image src="/images/index_icon1.jpg"></image>
-              <text>西安宜家家居</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon2.jpg"></image>
-              <text>高新大都荟20楼</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon3.jpg"></image>
-              <text>刘经理</text><text>416546846868</text>
-            </view>
-          </view>
-        </view>
-    </view>
 
+
+<view class="activity_list" >
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="activity_item" data-path="/pages/detail/detail?id={{item.id}}" bindtap="intoPath">
+      <view class="activity_name">
+        活动一
+      </view>
+      <view class="activity_cont flexRowBetween">
+        <view class="activity_img">
+          <image src="{{item.mainImg[0].url}}"></image>
+        </view>
+        <view class="activity_infor">
+          <view class="discont">{{item.title}}</view>
+          <view class="shop">
+            <image src="/images/index_icon1.jpg"></image>
+            <text>{{item.small_title}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon2.jpg"></image>
+            <text>{{item.description}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon3.jpg"></image>
+            <text>{{item.keywords}}</text><text>{{item.contactPhone}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>

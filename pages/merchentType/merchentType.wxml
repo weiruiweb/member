@@ -3,56 +3,32 @@
   <input placeholder="请输入想查询的学校或类型"></input>
 </view>
 
-<view class="activity_list">
-    <view class="activity_item" bindtap="detail">
-        <view class="activity_name">
-          活动一
+<view class="activity_list" >
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="activity_item" data-path="/pages/detail/detail?id={{item.id}}" bindtap="intoPath">
+      <view class="activity_name">
+        活动一
+      </view>
+      <view class="activity_cont flexRowBetween">
+        <view class="activity_img">
+          <image src="{{item.mainImg[0].url}}"></image>
         </view>
-        <view class="activity_cont flexRowBetween">
-          <view class="activity_img">
-            <image src="/images/active1.jpg"></image>
+        <view class="activity_infor">
+          <view class="discont">{{item.title}}</view>
+          <view class="shop">
+            <image src="/images/index_icon1.jpg"></image>
+            <text>{{item.small_title}}</text>
           </view>
-          <view class="activity_infor">
-            <view class="discont">宜家家居会员专属全场八折</view>
-            <view class="shop">
-              <image src="/images/index_icon1.jpg"></image>
-              <text>西安宜家家居</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon2.jpg"></image>
-              <text>高新大都荟20楼</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon3.jpg"></image>
-              <text>刘经理</text><text>416546846868</text>
-            </view>
+          <view class="shop">
+            <image src="/images/index_icon2.jpg"></image>
+            <text>{{item.description}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon3.jpg"></image>
+            <text>{{item.contactPhone}}</text>
           </view>
         </view>
+      </view>
     </view>
-    <view class="activity_item" bindtap="detail">
-        <view class="activity_name">
-          活动一
-        </view>
-        <view class="activity_cont flexRowBetween">
-          <view class="activity_img">
-            <image src="/images/active1.jpg"></image>
-          </view>
-          <view class="activity_infor">
-            <view class="discont">宜家家居会员专属全场八折</view>
-            <view class="shop">
-              <image src="/images/index_icon1.jpg"></image>
-              <text>西安宜家家居</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon2.jpg"></image>
-              <text>高新大都荟20楼</text>
-            </view>
-            <view class="shop">
-              <image src="/images/index_icon3.jpg"></image>
-              <text>刘经理</text><text>416546846868</text>
-            </view>
-          </view>
-        </view>
-    </view>
-
+  </block>
 </view>

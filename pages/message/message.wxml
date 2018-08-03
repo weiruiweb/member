@@ -1,26 +1,30 @@
 <!--login.wxml-->
-<view class="credit_list flexRowBetween" style="color:#585858;font-size:28rpx;">
-	我的积分记录
-</view>
-<view class="credit_list flexRowBetween">
-	<view class="cre_data">
-		2015-5-3
-	</view>
-	<view class="adrees">
-		碑林区
-	</view>
-	<view class="credit_number">
-		+800
-	</view>
-</view>
-<view class="credit_list flexRowBetween">
-	<view class="cre_data">
-		2015-5-3
-	</view>
-	<view class="adrees">
-		碑林区
-	</view>
-	<view class="credit_number">
-		+800
-	</view>
+<view class="activity_list" >
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="activity_item" >
+      <view class="activity_name">
+        活动一
+      </view>
+      <view class="activity_cont flexRowBetween">
+        <view class="activity_img">
+          <image src="{{item.mainImg[0].url}}"></image>
+        </view>
+        <view class="activity_infor">
+          <view class="discont">{{item.title}}</view>
+          <view class="shop">
+            <image src="/images/index_icon1.jpg"></image>
+            <text>{{item.small_title}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon2.jpg"></image>
+            <text>{{item.description}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon3.jpg"></image>
+            <text>{{item.contactPhone}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
 </view>

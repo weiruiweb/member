@@ -1,16 +1,17 @@
 <!--login.wxml-->
 <view id="login">
+	<view class="backindex" style="border:1px solid #06c1ae;width:60px;height:20px;color:#06c1ae; text-align:center;line-height:20px;border-radius:6px;font-size:12px;position:absolute;right:10px;top:20px" data-path="/pages/index/index"  bindtap='intoPath'>返回首页</view>
 	<view class="welcom">
 		<image src="/images/welcom.jpg"></image>
 	</view>
 	<view class="login_input">
-		<input type="text" placeholder="手机号">
+		<input type="text" placeholder="登录名" data-key="login_name" bindchange="bindInputChange">
 
 		</input>
-		<input type="password" placeholder="密码">
+		<input type="password" placeholder="密码" data-key="password" bindchange="bindInputChange">
 
 		</input>
-		<view class="login">
+		<view class="login" bindtap="check">
 			立即登录
 		</view>
 	</view>

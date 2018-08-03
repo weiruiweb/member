@@ -4,66 +4,24 @@
 		<image src="/images/credit_icon1.jpg"></image>
 		<view>
 		<text>目前积分:</text>
-		<text class="cre_number">600</text>
+		<text class="cre_number">{{web_computeData.FlowLog.countsum}}分</text>
 		</view>
 	</view>
 	<view class="cre_detail">
 		<image src="/images/credit_icon2.jpg"></image>
 		<text>积分详情</text>
 	</view>
+	<block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="credit_list flexRowBetween">
 		<view class="cre_data">
-			2015-5-3
+			{{item.create_time}}
 		</view>
 		<view class="adrees">
-			碑林区
+			{{item.trade_info}}
 		</view>
 		<view class="credit_number">
-			+800
+			{{item.count}}
 		</view>
 	</view>
-	<view class="credit_list flexRowBetween">
-		<view class="cre_data">
-			2015-5-3
-		</view>
-		<view class="adrees">
-			碑林区
-		</view>
-		<view class="credit_number">
-			+800
-		</view>
-	</view>
-	<view class="credit_list flexRowBetween">
-		<view class="cre_data">
-			2015-5-3
-		</view>
-		<view class="adrees">
-			碑林区
-		</view>
-		<view class="credit_number">
-			+800
-		</view>
-	</view>
-	<view class="credit_list flexRowBetween">
-		<view class="cre_data">
-			2015-5-3
-		</view>
-		<view class="adrees">
-			碑林区
-		</view>
-		<view class="credit_number">
-			+800
-		</view>
-	</view>
-	<view class="credit_list flexRowBetween">
-		<view class="cre_data">
-			2015-5-3
-		</view>
-		<view class="adrees">
-			碑林区
-		</view>
-		<view class="credit_number">
-			+800
-		</view>
-	</view>
+	</block>
 </view>

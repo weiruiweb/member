@@ -1,3 +1,9 @@
+page{
+	display:block;
+	background:#ededed;
+	min-height:100%;
+}
+
 .welcom image{
 	width:410rpx;
 	height:75rpx;

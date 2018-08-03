@@ -17,3 +17,79 @@ page{background-color:#ededed;}
 .credit_number	{
 	font-size:30rpx;
 	color:#06c1ae;}
+page{background-color:#ededed;}
+.search{
+	text-align:center;
+	background:#fff;
+	padding:15rpx;
+}
+.search input{
+	width:550rpx;
+	height:55rpx;
+	border-radius:20rpx;
+	background:#f5f5f5;
+	text-align:center;
+	color:#8a8a8a;
+	font-size:28rpx;
+	line-height:55rpx;
+	margin:0rpx auto;
+}
+/***************活动********************/
+.activity{
+	padding:26rpx 25rpx 24rpx 15rpx;
+
+}
+.activity_tlt{
+	height:37rpx;
+	line-height:32rpx;
+	font-size:32rpx;
+	border-left:solid 4rpx #06c1ae;
+	padding-left:20rpx;
+}
+.more image{
+	width:11rpx;
+	height:20rpx;
+	margin-left:12rpx;
+}
+.more{
+	font-size:20rpx;
+	color:#575757;
+	padding-top:5rpx;
+}
+.activity_list{
+	background:#ededed;
+	padding:1rpx 25rpx;
+}
+.activity_name{
+	font-size:22rpx;
+	color:#111;
+	padding:18rpx 0px 24rpx;
+}
+.activity_item{
+	background:#fff;
+	border-radius:20rpx;
+	padding:0rpx 22rpx;
+}
+.activity_img image{
+	width:250rpx;
+	height:250rpx;
+}
+.activity_infor{
+	width:364rpx;
+}
+.activity_infor image{
+	width:20rpx;
+	height:24rpx;
+	float:left;
+	margin-right:18rpx;
+}
+.activity_infor .discont{color:#111;
+	font-size:28rpx;
+	margin-bottom:50rpx;
+}
+.activity_infor .shop{
+	font-size:22rpx;
+	color:#111;
+	margin:15rpx 0rpx;
+}
+.activity_item{margin-top:15rpx;}

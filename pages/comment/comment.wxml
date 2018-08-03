@@ -3,15 +3,15 @@
 	<text>
 		请写下您的意见和建议
 	</text>
-	<textarea palceholder="请写下您的意见和建议">
+	<textarea palceholder="请写下您的意见和建议" data-key="content" bindblur="changeBind">
 	</textarea>
 	<text>
 		请留下您的联系方式
 	</text>
-	<textarea palceholder="请写下您的意见和建议" style="height:100rpx;">
+	<textarea palceholder="请写下您的意见和建议" style="height:100rpx;" data-key="phone" bindblur="changeBind">
 	</textarea>
 	
 </view>
-<view class="submit_info">
+<view class="submit_info" bindtap="submit">
 	提交
 </view>

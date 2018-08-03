@@ -1,41 +1,64 @@
 //logs.js
-const util = require('../../utils/util.js')
+import {Api} from '../../utils/api.js';
+var api = new Api();
 
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-   
+  
+    web_show:false,
+    userData:[]
   },
-  onLoad: function () {
+    
+
+  onLoad(){
+    const self = this;
+    self.getUserData()
+  },
+
+
+  onShow(){
+    const self = this;
+    const pass = api.checkLogin('0');
+    if(pass){
+      self.setData({
+        web_show:true
+      })
+    };  
+  },
+
+  getUserData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    const callback = (res)=>{
+      console.log(res);
+      self.data.userData = res;
+      self.setData({
+        web_userData:self.data.userData,
+      });
+     
+      wx.hideLoading();
+    };
+    api.userGet(postData,callback);
     
   },
-  userInfor:function(){
-  	wx.navigateTo({
-  		url:'/pages/userInfor/userInfor'
-  	})
+
+
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
   },
-  credit:function(){
-  	wx.navigateTo({
-  		url:'/pages/credit/credit'
-  	})
+
+ 
+
+  removeStorageSync(){
+    api.logOff();
   },
-  about:function(){
-  	wx.navigateTo({
-  		url:'/pages/about/about'
-  	})
-  },
-  message:function(){
-  	wx.navigateTo({
-  		url:'/pages/message/message'
-  	})
-  },
-  comment:function(){
-  	wx.navigateTo({
-  		url:'/pages/comment/comment'
-  	})
-  },
-   password:function(){
-    wx.navigateTo({
-      url:'/pages/password/password'
-    })
-  },
+
+
 })

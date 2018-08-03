@@ -8,5 +8,5 @@
 	</view>
 </view>
 <view class="qcorde">
-	<image src="/images/qcorde_icon1.jpg"></image>
+	<image src="{{web_QrData.info.url}}"></image>
 </view>

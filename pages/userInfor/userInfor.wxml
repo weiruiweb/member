@@ -1,17 +1,28 @@
 <!--userInfor.wxml-->
 <view class="user_input flexRowBetween">
-	<view class="input_before">姓名</view>
-	<view class="userInput"><input type="text" placeholder="输入姓名"></input></view>
+	<view class="input_before">姓名:</view>
+	<view class="userInput"><input type="text"  value="{{web_submitData.name}}" placeholder="请输入姓名" placeholder-style="line-height:90rpx" data-key="name" bindblur="changeBind" style="height:90rpx"></input></view>
 	
 </view>
-<view class="user_input flexRowBetween">
-	<view class="input_before">性别</view>
-	<view class="userInput"><input type="text" placeholder="输入性别"></input></view>
+<view class="user_input flexRowBetween" style="justify-content:flex-start">
+	<text class="input_before">性别:</text>
+	<view data-value="1" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:86rpx;align-items:center">
+		<image src="{{web_submitData.gender=='1'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx;" ></image>
+      	<view style="font-size:15px">男</view>
+	</view>
+   		
+	<view data-value="0" data-key="gender" bindtap="changeBind" style="display:flex;margin-left:80rpx;align-items:center">
+		<image src="{{web_submitData.gender=='0'?'/images/radio-active.png':'/images/radio.png'}}" style="width:40rpx;height:40rpx;margin-right:20rpx" ></image>
+      	<view style="font-size:15px">女</view>
+	</view>
 </view>
+
 <view class="user_input flexRowBetween">
-	<view class="input_before">联系方式</view>
-	<view class="userInput"><input type="text" placeholder="输入联系方式"></input></view>
+	<view class="input_before">联系方式:</view>
+	<view class="userInput">
+		<input type="text" placeholder="请输入联系方式" placeholder-style="line-height:90rpx" value="{{web_submitData.phone}}" data-key="phone" style="height:90rpx" bindblur="changeBind"></input>
+	</view>
 </view>
-<view class="submit_info">
+<view class="submit_info" bindtap="submit">
 	保存
 </view>

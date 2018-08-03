@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.1",
-	"appid": "wx212611f012b9cf1d",
-	"projectname": "hiuyuanka",
+	"appid": "wxd066f11915f5efb5",
+	"projectname": "cardTwo",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -56,7 +56,31 @@
 				{
 					"id": -1,
 					"name": "inex",
-					"pathName": "pages/index/index"
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/userInfor/userInfor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/credit/credit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "修改密码",
+					"pathName": "pages/password/password",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商家个人中心",
+					"pathName": "pages/merchant/merchant"
 				}
 			]
 		}

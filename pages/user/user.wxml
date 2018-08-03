@@ -16,41 +16,50 @@
 			<view class="cre_img">
 				<image src="/images/user_icon1.jpg"></image>
 			</view>
-			<text>600积分</text>
+			<text>{{web_userData.info.data[0].info.score}}积分</text>
 		</view>
 	</view>
 </view>
 <view class="userInfo">
 	<view class="user_item flexRowBetween">
 
-		<view class="user_in" bindtap="userInfor">
+		<view class="user_in" data-path="/pages/userInfor/userInfor" bindtap="intoPath">
 			<image src="/images/user_icon2.jpg"></image>
 			<view class="text">个人信息</view>
 		</view>
 
-		<view class="user_in" bindtap="credit">
+		<view class="user_in" data-path="/pages/credit/credit" bindtap="intoPath">
 			<image src="/images/user_icon3.jpg"></image>
 			<view class="text">我的积分</view>
 		</view>
-		<view class="user_in" style="border-right:none" bindtap="about">
+		<view class="user_in" style="border-right:none" data-path="/pages/about/about" bindtap="intoPath">
 			<image src="/images/user_icon4.jpg"></image>
 			<view class="text">关于我们</view>
 		</view>
 	</view>
 	<view class="user_item flexRowBetween">
 
-		<view class="user_in" bindtap="password">
+		<view class="user_in" data-path="/pages/password/password" bindtap="intoPath">
 			<image src="/images/user_icon5.jpg"></image>
 			<view class="text">修改密码</view>
 		</view>
 
-		<view class="user_in" bindtap="message">
+		<view class="user_in" data-path="/pages/message/message" bindtap="intoPath">
 			<image src="/images/user_icon6.jpg"></image>
 			<view class="text">我的消息</view>
 		</view>
-		<view class="user_in" style="border-right:none" bindtap="comment">
+		<view class="user_in" style="border-right:none" data-path="/pages/comment/comment" bindtap="intoPath">
 			<image src="/images/user_icon7.jpg"></image>
 			<view class="text">意见反馈</view>
 		</view>
+		
+	</view>
+	<view class="user_item flexRowBetween">
+
+		<view class="user_in" data-path="/pages/qcorde/qcorde" bindtap="intoPath">
+			<image src="/images/user_icon11.png"></image>
+			<view class="text">我的二维码</view>
+		</view>
+
 	</view>
 </view>

@@ -12,7 +12,7 @@ Page({
     
     mainData:[],
     sliderData:[],
-
+    scanData:[],
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
@@ -75,6 +75,18 @@ Page({
       });
     };
     api.labelGet(postData,callback);
+  },
+
+  scanCode(){ 
+    const self = this;
+    wx.scanCode({
+    success: (res) => {   
+      console.log(res)
+      wx.navigateTo({
+        url:"/pages/transaction/transaction?data="+res.result,
+      })
+     }
+   })
   },
 
 })

@@ -15,7 +15,8 @@
     "pages/qcorde/qcorde",
     "pages/Mmessage/Mmessage",
     "pages/merchentType/merchentType",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/transaction/transaction"
   ],
   "window":{
     "backgroundTextStyle":"light",

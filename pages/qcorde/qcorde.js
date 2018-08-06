@@ -28,7 +28,7 @@ Page({
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('token');
-    postData.param = wx.getStorageSync('info').user_no;
+    postData.param = wx.getStorageSync('info').user_no+','+wx.getStorageSync('info').login_name+','+wx.getStorageSync('login').userType;
     postData.output = 'url';
     postData.ext = 'png';
     const callback = (res)=>{

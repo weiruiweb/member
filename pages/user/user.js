@@ -34,6 +34,7 @@ Page({
     const self = this;
     const postData = {};
     postData.token = wx.getStorageSync('token');
+    
     const callback = (res)=>{
       console.log(res);
       self.data.userData = res;

@@ -8,7 +8,7 @@
 	padding:0px 44rpx;
 }
 .today_income,.month_income{
-	width:320rpx;
+	width:100%;
 	height:300rpx;
 	border-radius:10rpx;
 	text-align:center;

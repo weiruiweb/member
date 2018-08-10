@@ -3,7 +3,7 @@
   <block wx:for="{{web_mainData}}" wx:key="id">
     <view class="activity_item" >
       <view class="activity_name">
-        活动一
+
       </view>
       <view class="activity_cont flexRowBetween">
         <view class="activity_img">

@@ -54,6 +54,8 @@ Page({
     api.fillChange(e,self,'sForm');
   },
 
+
+
   pay(){
     const self = this;
     if(wx.getStorageSync('login').userType == 0){
@@ -71,6 +73,9 @@ Page({
     };
     const callback = (res)=>{
       api.dealRes(res);
+      setTimeout(function(){
+        api.pathTo('/pages/index/index','tab')
+      },1000);
     };
     api.flowLogAdd(postData,callback)
   },

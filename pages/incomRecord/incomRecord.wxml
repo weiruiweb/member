@@ -4,9 +4,9 @@
 		<view class="today_income">
 			<image src="/images/incom_icon.png"></image>
 			<view>
-				<text>今日收入</text><text class="text1">5笔</text>
+				<text>今日收入</text><text class="text1">{{web_todayMainData_total}}笔</text>
 			</view>
-			<view class="total">公计210笔</view>
+			<view class="total">共计收入{{web_mainData_total}}笔</view>
 		</view>
 	</view>
 	<view class="cre_detail">

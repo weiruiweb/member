@@ -33,7 +33,11 @@ class Base extends Token{
                     const callback = (data)=>{
                         that.request(data);
                     };
-                    /*that.getUserInfo(params,callback);*/
+                    if(wx.getStorageSync('token')&&params.data.token == wx.getStorageSync('token')){
+                        that.logOff();
+                    }else{
+                       that.getUserInfo(params,callback); 
+                    };
                     
                     
                 } else {

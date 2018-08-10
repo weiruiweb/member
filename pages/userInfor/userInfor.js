@@ -102,17 +102,25 @@ Page({
   },
   
 
-  submit(){
+submit(){
     const self = this;
+    var phone = self.data.submitData.phone;
     const pass = api.checkComplete(self.data.submitData);
     if(pass){
-      if(wx.getStorageSync('info').info){
-        wx.showLoading();
-        self.userInfoUpdate();
-      }else{
-        wx.showLoading();
-        self.userInfoAdd();
-      }  
+      if(phone.trim().length != 11 || !/^1[3|4|5|6|7|8|9]\d{9}$/.test(phone)){
+          api.showToast('手机格式错误','fail')
+        }else{
+          if(JSON.stringify(wx.getStorageSync('info').info)=='[]'){
+            wx.showLoading();
+            self.userInfoAdd();
+          }else{
+            wx.showLoading();
+            self.userInfoUpdate();
+          }
+          setTimeout(function(){
+            api.pathTo('/pages/user/user','tab')
+          },1000); 
+        }
     }else{
       api.showToast('请补全信息','fail');
     };

@@ -14,7 +14,7 @@ Page({
   
   onLoad(options){
     const self = this;
-    console.log(options)
+    self.getComputeData();
     var str = options.data;
     var data = str.split(',');
     self.data.userInfoById = data;
@@ -56,6 +56,32 @@ Page({
 
 
 
+  getComputeData(){
+    const self = this;
+    const postData = {};
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },
+        
+        searchItem:{
+          create_time:['between',[new Date(new Date().setHours(0, 0, 0, 0)) / 1000,new Date(new Date().setHours(0, 0, 0, 0)) / 1000 + 24 * 60 * 60-1]],
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+          count:['<','0']
+        }
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.data.computeData = res;
+    };
+    api.flowLogCompute(postData,callback);
+  },
+
+
+
   pay(){
     const self = this;
     if(wx.getStorageSync('login').userType == 0){
@@ -90,7 +116,11 @@ Page({
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
       if(wx.getStorageSync('info').info.score&&wx.getStorageSync('info').info.score>=self.data.sForm.score){
-        self.pay();
+        if(-self.data.computeData<wx.getStorageSync('info').passage1){
+          self.pay();
+        }else{
+          api.showToast('超过日消费限额','fail')
+        }   
       }else{
         api.showToast('剩余积分不足','fail')
       }

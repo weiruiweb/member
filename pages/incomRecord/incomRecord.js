@@ -21,6 +21,7 @@ Page({
     self.getMainData();
     self.getTime();
     self.getTodayMainData();
+    self.getComputeData()
   },
 
 
@@ -106,8 +107,39 @@ Page({
   	var timeStampEnd = 
       new Date(new Date().setHours(0, 0, 0, 0)) / 1000 + 24 * 60 * 60-1;
     self.data.searchItem.create_time = ['between',[timeStampStart,timeStampEnd]];
-  }
-  
+  },
+
+  getComputeData(){
+    const self = this;
+    const postData = {};
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },
+        
+        searchItem:{
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+          count:['>','0']
+        }
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.data.computeData = res;
+      self.setData({
+        web_computeData:self.data.computeData,
+      });
+      wx.hideLoading();
+    };
+    api.flowLogCompute(postData,callback);
+  },
+
+  intoPath(e){
+    const self = this;
+    api.pathTo(api.getDataSet(e,'path'),'nav');
+  },
 
  
 })

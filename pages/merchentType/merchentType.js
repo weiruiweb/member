@@ -10,8 +10,14 @@ Page({
    */
   data: {
     
-    mainData:[]
-
+    mainData:[],
+    searchItem:{
+      thirdapp_id:getApp().globalData.thirdapp_id,
+    },
+    searchItemOr:{},
+    sForm:{
+      item:''
+    }
   },
     
 
@@ -21,6 +27,21 @@ Page({
     self.getMainData();
   },
 
+  changeBind(e){
+    const self = this;
+    api.fillChange(e,self,'sForm');
+    console.log(self.data.sForm);
+    if(self.data.sForm.item){
+      self.data.searchItem.small_title = ['LIKE',['%'+self.data.sForm.item+'%']],
+      self.data.searchItemOr.passage1 = ['LIKE',['%'+self.data.sForm.item+'%']],
+      self.getMainData(true)
+    }else if(self.data.sForm.item==''){
+      delete self.data.searchItem.small_title,
+      delete self.data.searchItemOr.passage1,
+      self.getMainData(true)
+    }
+  },
+
   getMainData(isNew){
     const self = this;
     if(isNew){
@@ -28,9 +49,8 @@ Page({
     };
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
-    postData.searchItem = {
-      thirdapp_id:getApp().globalData.thirdapp_id,
-    };
+    postData.searchItem = api.cloneForm(self.data.searchItem);
+    postData.searchItemOr = api.cloneForm(self.data.searchItemOr);
     postData.order = {
       create_time:'desc'
     };
@@ -60,6 +80,21 @@ Page({
     };
     api.articleGet(postData,callback);
   },
+
+  articleGet(Name){
+    const self = this;
+    const postData = {
+      searchItem:{
+        title:['LIKE',['%'+Name+'%']],
+        thirdapp_id:getApp().globalData.thirdapp_id,
+      }
+    };
+    const callback = (res)=>{
+
+    };
+    api.articleGet(postData,callback);
+  },
+
 
   intoPath(e){
     const self = this;

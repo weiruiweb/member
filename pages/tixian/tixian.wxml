@@ -1,0 +1,17 @@
+<!--userInfor.wxml-->
+<view class="user_input flexRowBetween">
+	<view class="input_before">提现金额:</view>
+	<view class="userInput"><input type="text"  value="{{web_submitData.score}}" placeholder="请输入金额" placeholder-style="line-height:90rpx" data-key="score" bindblur="changeBind" style="height:90rpx"></input></view>
+</view>
+
+<view class="user_input flexRowBetween">
+	<view class="input_before">账户信息:</view>
+	<view class="userInput"><input type="text"  value="{{web_submitData.trade_info}}" placeholder="请输入账户信息" placeholder-style="line-height:90rpx" data-key="trade_info" bindblur="changeBind" style="height:90rpx"></input></view>
+</view>
+
+
+
+
+<view class="submit_info" bindtap="submit">
+	申请提现
+</view>

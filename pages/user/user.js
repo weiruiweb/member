@@ -22,6 +22,11 @@ Page({
     self.getUserData();
   },
 
+  onShow(){
+    const self = this;
+    self.getUserData();
+  },
+
 
   onShow(){
     const self = this;

@@ -1,6 +1,6 @@
 <!--type.wxml-->
 <view class="search">
-  <input placeholder="请输入想查询的学校或类型"></input>
+  <input placeholder="请输入想查询的学校或类型" bindconfirm="changeBind" data-key="item" ></input>
 </view>
 
 <view class="activity_list" >
@@ -27,6 +27,12 @@
             <image src="/images/index_icon3.jpg"></image>
             <text>{{item.contactPhone}}</text>
           </view>
+
+          <view class="shop">
+            <image src="/images/index_icon4.png"></image>
+            <text>{{item.passage1}}</text>
+          </view>
+
         </view>
       </view>
     </view>

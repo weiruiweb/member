@@ -17,7 +17,8 @@
     "pages/merchentType/merchentType",
     "pages/detail/detail",
     "pages/transaction/transaction",
-    "pages/activeList/activeList"
+    "pages/activeList/activeList",
+    "pages/tixian/tixian"
   ],
   "window":{
     "backgroundTextStyle":"light",

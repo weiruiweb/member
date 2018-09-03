@@ -1,6 +1,6 @@
 <!--about.wxml-->
 <view class="about_top">
-	<image src="{{web_mainData.bannerImg[0].url}}.jpg">
+	<image src="{{web_mainData.bannerImg[0].url}}">
 	</image>
 </view>
 <view class="about_cont">

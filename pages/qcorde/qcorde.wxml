@@ -4,7 +4,7 @@
 		<open-data type="userAvatarUrl" class="user_pho"></open-data>
 	</view>
 	<view class="user_name">
-		宜家家居
+		{{web_name}}
 	</view>
 </view>
 <view class="qcorde">

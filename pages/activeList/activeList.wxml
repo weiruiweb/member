@@ -1,0 +1,31 @@
+<!--type.wxml-->
+
+<view class="activity_list" >
+  <block wx:for="{{web_mainData}}" wx:key="id">
+    <view class="activity_item" data-path="/pages/detail/detail?id={{item.id}}" bindtap="intoPath">
+      <view class="activity_name">
+
+      </view>
+      <view class="activity_cont flexRowBetween">
+        <view class="activity_img">
+          <image src="{{item.mainImg[0].url}}"></image>
+        </view>
+        <view class="activity_infor">
+          <view class="discont">{{item.title}}</view>
+          <view class="shop">
+            <image src="/images/index_icon1.jpg"></image>
+            <text>{{item.small_title}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon2.jpg"></image>
+            <text>{{item.description}}</text>
+          </view>
+          <view class="shop">
+            <image src="/images/index_icon3.jpg"></image>
+            <text>{{item.contactPhone}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

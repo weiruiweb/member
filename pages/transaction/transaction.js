@@ -67,7 +67,7 @@ Page({
           user_no:wx.getStorageSync('info').user_no,
           type:3,
           count:self.data.sForm.score,
-          trade_info:'已完成',
+          trade_info:'积分消费',
           opposite_user_no:self.data.userInfoById[0]
         }
     };
@@ -89,7 +89,11 @@ Page({
     const self = this;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
+      if(wx.getStorageSync('info').info.score&&wx.getStorageSync('info').info.score>=self.data.sForm.score){
         self.pay();
+      }else{
+        api.showToast('剩余积分不足','fail')
+      }
     }else{
       api.showToast('请补全信息','fail')
     }

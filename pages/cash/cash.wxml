@@ -4,7 +4,7 @@
 		<image src="/images/user_icon10.png"></image>
 		<view>
 		<text>本月提现:</text>
-		<text class="cre_number">600</text>
+		<text class="cre_number">{{web_computeData.FlowLog.countsum}}</text>
 		</view>
 	</view>
 	<view class="cre_detail">

@@ -29,11 +29,22 @@ Page({
     const postData = {};
     postData.paginate = api.cloneForm(self.data.paginate);
     postData.searchItem = {
-      thirdapp_id:'59',
-      menu_id:'385'
+      thirdapp_id:getApp().globalData.thirdapp_id,
     };
     postData.order = {
       create_time:'desc'
+    };
+    postData.getBefore = {
+      article:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['商家列表']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
       if(res.info.data.length>0){

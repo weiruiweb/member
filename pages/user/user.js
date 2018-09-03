@@ -2,6 +2,9 @@
 import {Api} from '../../utils/api.js';
 var api = new Api();
 
+import {Token} from '../../utils/token.js';
+const token = new Token();
+
 Page({
 
   /**
@@ -16,7 +19,7 @@ Page({
 
   onLoad(){
     const self = this;
-    self.getUserData()
+    self.getUserData();
   },
 
 

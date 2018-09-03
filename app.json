@@ -16,7 +16,8 @@
     "pages/Mmessage/Mmessage",
     "pages/merchentType/merchentType",
     "pages/detail/detail",
-    "pages/transaction/transaction"
+    "pages/transaction/transaction",
+    "pages/activeList/activeList"
   ],
   "window":{
     "backgroundTextStyle":"light",

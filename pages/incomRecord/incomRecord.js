@@ -79,7 +79,6 @@ Page({
         });
       }else{
         self.data.isLoadAll = true;
-        api.showToast('没有更多了','fail');
         self.setData({
           web_todayMainData:self.data.todayMainData,
           web_todayMainData_total:res.info.total,

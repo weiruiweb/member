@@ -19,21 +19,29 @@ Page({
     self.getMainData();
   },
 
-  getMainData(isNew){
+  getMainData(){
     const self = this;
-    if(isNew){
-      api.clearPageIndex(self);  
-    };
     const postData = {};
     postData.searchItem = {
       thirdapp_id:'59',
-      menu_id:'380'
     };
-    postData.order = {
-      create_time:'desc'
+    postData.getBefore = {
+      article:{
+        tableName:'label',
+        searchItem:{
+          title:['=',['关于我们']],
+          thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
+        },
+        middleKey:'menu_id',
+        key:'id',
+        condition:'in',
+      },
     };
     const callback = (res)=>{
-      self.data.mainData = res.info.data[0];
+      self.data.mainData = {};
+      if(res.info.data.length>0){
+        self.data.mainData = res.info.data[0];
+      };
       wx.hideLoading();
       self.data.mainData.content = api.wxParseReturn(res.info.data[0].content).nodes;
       self.setData({

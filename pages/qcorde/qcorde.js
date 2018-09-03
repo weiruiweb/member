@@ -36,6 +36,7 @@ Page({
       self.data.QrData = res;
       self.setData({
         web_QrData:self.data.QrData,
+        web_name:wx.getStorageSync('info').login_name
       });
      
       wx.hideLoading();

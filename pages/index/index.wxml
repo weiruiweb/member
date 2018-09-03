@@ -13,7 +13,7 @@
       <text>所有商家</text>
   </view>
 </view>
-<view class="banner">
+<view class="banner" style="margin-top:20rpx">
    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
     <block wx:for="{{web_sliderData.info.data[0].mainImg}}" wx:key="id">
       <swiper-item>
@@ -26,7 +26,7 @@
     <view class="activity_tlt">
       活动列表
     </view>
-    <view class="more">
+    <view class="more" data-path="/pages/activeList/activeList" bindtap="intoPath">
       <text>更多</text>
       <image src="/images/next_page.jpg"></image>
     </view>

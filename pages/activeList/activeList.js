@@ -1,4 +1,5 @@
-//logs.js
+//index.js
+//获取应用实例
 import {Api} from '../../utils/api.js';
 var api = new Api();
 
@@ -20,8 +21,6 @@ Page({
     self.getMainData();
   },
 
-
-
   getMainData(isNew){
     const self = this;
     if(isNew){
@@ -39,7 +38,7 @@ Page({
       article:{
         tableName:'label',
         searchItem:{
-          title:['=',['我的消息']],
+          title:['=',['活动列表']],
           thirdapp_id:['=',[getApp().globalData.thirdapp_id]],
         },
         middleKey:'menu_id',
@@ -67,13 +66,4 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
-  onReachBottom() {
-    const self = this;
-    if(!self.data.isLoadAll){
-      self.data.paginate.currentPage++;
-      self.getMainData();
-    };
-  },
-
 })
-

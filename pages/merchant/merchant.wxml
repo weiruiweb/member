@@ -1,34 +1,37 @@
 <!--mmm.wxml-->
-<view class="banner">
-  <image src="/images/banner.jpg"></image>
-</view>
-<view class="userInfo">
-	<view class="user_item flexRowBetween">
+<view wx:if="{{web_show}}">
+	<view class="banner">
+	  <image src="/images/banner.jpg"></image>
+	</view>
+	<view class="userInfo">
+		<view class="user_item flexRowBetween">
 
-		<view class="user_in" data-path="/pages/password/password" bindtap="intoPath">
-			<image src="/images/user_icon8.png"></image>
-			<view class="text">修改密码</view>
-		</view>
+			<view class="user_in" data-path="/pages/password/password" bindtap="intoPath">
+				<image src="/images/user_icon8.png"></image>
+				<view class="text">修改密码</view>
+			</view>
 
-		<view class="user_in" data-path="/pages/incomRecord/incomRecord" bindtap="intoPath">
-			<image src="/images/user_icon9.png"></image>
-			<view class="text">收入记录</view>
+			<view class="user_in" data-path="/pages/incomRecord/incomRecord" bindtap="intoPath">
+				<image src="/images/user_icon9.png"></image>
+				<view class="text">收入记录</view>
+			</view>
+			<view class="user_in" style="border-right:none" data-path="/pages/cash/cash" bindtap="intoPath">
+				<image src="/images/user_icon10.png"></image>
+				<view class="text">我的提现</view>
+			</view>
 		</view>
-		<view class="user_in" style="border-right:none" data-path="/pages/cash/cash" bindtap="intoPath">
-			<image src="/images/user_icon10.png"></image>
-			<view class="text">我的提现</view>
+		
+		<view class="user_item user_two">
+			<view class="user_in" data-path="/pages/qcorde/qcorde" bindtap="intoPath">
+				<image src="/images/user_icon11.png"></image>
+				<view class="text">我的二维码</view>
+			</view>
+
+			<view class="user_in" data-path="/pages/message/message" bindtap="intoPath">
+				<image src="/images/user_icon12.jpg"></image>
+				<view class="text">我的消息</view>
+			</view>
 		</view>
 	</view>
-	<view class="user_item user_two">
-
-		<view class="user_in" data-path="/pages/qcorde/qcorde" bindtap="intoPath">
-			<image src="/images/user_icon11.png"></image>
-			<view class="text">我的二维码</view>
-		</view>
-
-		<view class="user_in" data-path="/pages/message/message" bindtap="intoPath">
-			<image src="/images/user_icon12.jpg"></image>
-			<view class="text">我的消息</view>
-		</view>
-	</view>
 </view>
+

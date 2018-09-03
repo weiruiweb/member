@@ -40,7 +40,7 @@ Page({
       }; 
       const callback = (res) => { 
         wx.hideLoading();
-        const pass = api.dealRes(res);
+        const pass = api.showToast('修改成功','fail');
         if(pass){
           setTimeout(function(){
           	api.logOff();

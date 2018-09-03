@@ -1,4 +1,5 @@
 .about_top{text-align:center;}
+@import "../../wxParse/wxParse.wxss"; 
 .about_top image{
 	width:632rpx;
 	height:396rpx;

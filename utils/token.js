@@ -79,7 +79,7 @@ class Token {
                 };
 
                 wx.request({
-                    url: 'http://solelytech.iicp.net/cardtwo/public/api/v1/Base/ProgrameToken/get',
+                    url: 'https://guoguoxiaoyuan.com/cardtwo/public/index.php/api/v1/Base/ProgrameToken/get',
                     method:'POST',
                     data:postData,
                     success:function(res){  
@@ -121,7 +121,7 @@ class Token {
             }
 
             wx.request({
-                url: 'http://solelytech.iicp.net/cardtwo/public/api/v1/Func/Common/loginByUp',
+                url: 'https://guoguoxiaoyuan.com/cardtwo/public/index.php/api/v1/Func/Common/loginByUp',
                 method:'POST',
                 data:postData,
                 success:function(res){

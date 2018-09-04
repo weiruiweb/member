@@ -19,17 +19,14 @@ Page({
 
   onLoad(){
     const self = this;
-    self.getUserData();
   },
 
-  onShow(){
-    const self = this;
-    self.getUserData();
-  },
+
 
 
   onShow(){
     const self = this;
+    self.getComputeData();
     const pass = api.checkLogin('0');
     if(pass){
       self.setData({
@@ -38,22 +35,29 @@ Page({
     };  
   },
 
-  getUserData(){
+  getComputeData(){
     const self = this;
     const postData = {};
-    postData.token = wx.getStorageSync('token');
-    
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },
+        
+        searchItem:{
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+        }
+      }
+    };
     const callback = (res)=>{
       console.log(res);
-      self.data.userData = res;
+      self.data.computeData = res.FlowLog.countsum;
       self.setData({
-        web_userData:self.data.userData,
-      });
-     
-      wx.hideLoading();
+        web_computeData:self.data.computeData
+      })
     };
-    api.userGet(postData,callback);
-    
+    api.flowLogCompute(postData,callback);
   },
 
 

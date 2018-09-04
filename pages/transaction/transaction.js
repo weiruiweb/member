@@ -9,12 +9,12 @@ Page({
     },
     userInfo:{},
     userInfoById:{},
-
+    computeData:[],
+    todayData:[]
   },
   
   onLoad(options){
     const self = this;
-    self.getComputeData();
     var str = options.data;
     var data = str.split(',');
     self.data.userInfoById = data;
@@ -45,7 +45,11 @@ Page({
       }
   },
 
-
+  onShow(){
+    const self = this;
+    self.getTodayComputeData();
+    self.getComputeData();
+  },
 
 
 
@@ -56,7 +60,7 @@ Page({
 
 
 
-  getComputeData(){
+  getTodayComputeData(){
     const self = this;
     const postData = {};
     postData.data = {
@@ -75,7 +79,29 @@ Page({
     };
     const callback = (res)=>{
       console.log(res);
-      self.data.computeData = res;
+      self.data.todayData = res.FlowLog.countsum;
+    };
+    api.flowLogCompute(postData,callback);
+  },
+
+
+  getComputeData(){
+    const self = this;
+    const postData = {};
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },       
+        searchItem:{
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+        }
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.data.computeData = res.FlowLog.countsum;
     };
     api.flowLogCompute(postData,callback);
   },
@@ -98,7 +124,7 @@ Page({
         }
     };
     const callback = (res)=>{
-      api.dealRes(res);
+      api.showToast('支付成功','fail');
       setTimeout(function(){
         api.pathTo('/pages/index/index','tab')
       },1000);
@@ -115,8 +141,8 @@ Page({
     const self = this;
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
-      if(wx.getStorageSync('info').info.score&&wx.getStorageSync('info').info.score>=self.data.sForm.score){
-        if(-self.data.computeData<wx.getStorageSync('info').passage1){
+      if(self.data.computeData&&self.data.computeData>=self.data.sForm.score){ 
+        if(parseInt(-self.data.todayData)+parseInt(self.data.sForm.score) < parseInt(wx.getStorageSync('info').passage1)){
           self.pay();
         }else{
           api.showToast('超过日消费限额','fail')
@@ -125,7 +151,7 @@ Page({
         api.showToast('剩余积分不足','fail')
       }
     }else{
-      api.showToast('请补全信息','fail')
+      api.showToast('请输入积分','fail')
     }
   }
 

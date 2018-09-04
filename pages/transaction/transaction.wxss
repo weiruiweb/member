@@ -29,7 +29,7 @@
   text-align: center;
   font-size: 40rpx;
   color: #fff;
-  background: #FF9800;
+  background: #06c1ae;
   border-radius: 10rpx;
   margin: 0 auto;
   display: block;

@@ -14,7 +14,7 @@
 				<view class="cre_img">
 					<image src="/images/user_icon1.jpg"></image>
 				</view>
-				<text>{{web_userData.info.data[0].info.score}}积分</text>
+				<text>{{web_computeData}}积分</text>
 			</view>
 		</view>
 	</view>

@@ -30,24 +30,51 @@ Page({
     })
     if(!self.data.userInfoById){
       const func = ()=>{
-          setTimeout(function(){
-            wx.switchTab({
-              url: '/pages/index/index'
-            });
-          },1000);
-        };
-        api.showToast('二维码失效','fail',func);
-      }else if(self.data.userInfoById[2] == wx.getStorageSync('login').userType){
-        
-        const toastCallback = (res)=>{
-          setTimeout(function(){
-            wx.switchTab({
-              url: '/pages/index/index'
-            });
-          },1000);
-        }
-        api.showToast('无效用户','fail',toastCallback);
+        setTimeout(function(){
+          wx.switchTab({
+            url: '/pages/index/index'
+          });
+        },1000);
+      };
+      api.showToast('二维码失效','fail',func);
+      wx.navigateBack({
+        delta: 1
+      });
+    }else if(self.data.userInfoById[2] == wx.getStorageSync('login').userType){
+
+      const toastCallback = (res)=>{
+        setTimeout(function(){
+          wx.switchTab({
+            url: '/pages/index/index'
+          });
+        },1000);
       }
+      api.showToast('无效用户','fail',toastCallback);
+      wx.navigateBack({
+        delta: 1
+      });
+    };
+
+    const postData = {
+      searchItem:{
+        'user_no':self.data.userInfoById[0],
+      }
+    };
+    
+    const callback = (res)=>{
+      console.log(res)
+      if(!res.info.data.length>0){
+        api.showToast('无效商户','fail');
+        setTimeout(function(){
+          wx.navigateBack({
+            delta: 1
+          });
+        },1000)
+        
+      };
+      
+    };
+    api.userGet(postData,callback);
   },
 
   onShow(){
@@ -148,14 +175,18 @@ Page({
 
   show(){
     const self = this;
+
     if(self.data.isShow == false){
       self.setData({
         isShow:true
       })
     }else{
-      self.setData({
+      wx.navigateBack({
+        delta: 1
+      });
+      /*self.setData({
         isShow:false
-      })
+      })*/
     }
   },
 

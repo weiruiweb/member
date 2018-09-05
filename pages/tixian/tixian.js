@@ -22,7 +22,7 @@ Page({
 
   onLoad(){
     const self = this;
-
+    self.getComputeData();
   },
 
 
@@ -62,9 +62,33 @@ Page({
         }
     };
     const callback = (res)=>{
-      api.showToast('申请成功','fail');  
+      api.showToast('申请成功','fail'); 
+      wx.navigateBack({
+        delta: 1
+      }) 
     };
     api.flowLogAdd(postData,callback)
+  },
+
+  getComputeData(){
+    const self = this;
+    const postData = {};
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },       
+        searchItem:{
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+        }
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.data.computeData = res.FlowLog.countsum;
+    };
+    api.flowLogCompute(postData,callback);
   },
   
 
@@ -72,11 +96,15 @@ Page({
     const self = this;
     var num = self.data.submitData.score;
     const pass = api.checkComplete(self.data.submitData);
-    if(pass){   
-      if(!(/(^[1-9]\d*$)/.test(num))){
-        api.showToast('请输入正整数','fail')
+    if(pass){  
+      if(self.data.computeData&&self.data.computeData>=num){
+        if(!(/(^[1-9]\d*$)/.test(num))){
+         api.showToast('请输入正整数','fail')
+        }else{
+          self.flowLogAdd();
+        }   
       }else{
-        self.flowLogAdd();
+        api.showToast('积分不足','fail');  
       }   
     }else{
       api.showToast('请补全信息','fail');

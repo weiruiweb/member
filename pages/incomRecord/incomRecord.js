@@ -21,8 +21,12 @@ Page({
     self.getMainData();
     self.getTime();
     self.getTodayMainData();
-    self.getComputeData()
+    self.getComputeData();
+    self.getTodayComputeData();
+    self.getLessComputeData();
   },
+
+
 
 
   getMainData(isNew){
@@ -90,6 +94,34 @@ Page({
     api.flowLogGet(postData,callback);
   },
 
+  getTodayComputeData(){
+    const self = this;
+    const postData = {};
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },
+        
+        searchItem:{
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+          count:['>','0'],
+          create_time:['between',[new Date(new Date().setHours(0, 0, 0, 0)) / 1000,new Date(new Date().setHours(0, 0, 0, 0)) / 1000 + 24 * 60 * 60-1]]
+        }
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.data.todayComputeData = res;
+      self.setData({
+        web_todayComputeData:self.data.todayComputeData,
+      });
+      wx.hideLoading();
+    };
+    api.flowLogCompute(postData,callback);
+  },
+
 
   onReachBottom(){
     const self = this;
@@ -130,6 +162,33 @@ Page({
       self.data.computeData = res;
       self.setData({
         web_computeData:self.data.computeData,
+      });
+      wx.hideLoading();
+    };
+    api.flowLogCompute(postData,callback);
+  },
+
+
+  getLessComputeData(){
+    const self = this;
+    const postData = {};
+    postData.data = {
+      FlowLog:{
+        compute:{
+          count:'sum',
+        },
+        
+        searchItem:{
+          user_no:wx.getStorageSync('info').user_no,
+          type:3,
+        }
+      }
+    };
+    const callback = (res)=>{
+      console.log(res);
+      self.data.lessComputeData = res;
+      self.setData({
+        web_lessComputeData:self.data.lessComputeData,
       });
       wx.hideLoading();
     };

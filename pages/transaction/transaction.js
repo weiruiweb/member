@@ -10,12 +10,17 @@ Page({
     userInfo:{},
     userInfoById:{},
     computeData:[],
-    todayData:[]
+    todayData:[],
+    limitData:'',
+    buttonClicked: false,
+    isShow:false,
+    mainData:[],
   },
   
   onLoad(options){
     const self = this;
     var str = options.data;
+    console.log(options.data)
     var data = str.split(',');
     self.data.userInfoById = data;
     console.log(wx.getStorageSync('login').userType)
@@ -56,6 +61,9 @@ Page({
   fillChange(e){
     const self = this;
     api.fillChange(e,self,'sForm');
+    self.setData({
+      web_score:self.data.sForm.score
+    })
   },
 
 
@@ -79,8 +87,15 @@ Page({
     };
     const callback = (res)=>{
       console.log(res);
+      console.log('test',parseFloat(wx.getStorageSync('info').passage1))
       self.data.todayData = res.FlowLog.countsum;
+      self.data.sslimitData = (parseFloat(wx.getStorageSync('info').passage1)-parseFloat(-self.data.todayData)).toFixed(2);
+      console.log(self.data.sslimitData)
+      self.setData({
+        web_sslimitData:self.data.sslimitData
+      })
     };
+    
     api.flowLogCompute(postData,callback);
   },
 
@@ -106,6 +121,44 @@ Page({
     api.flowLogCompute(postData,callback);
   },
 
+  getMainData(){
+    const self = this;
+    const postData = {};
+    postData.token = wx.getStorageSync('token');
+    postData.searchItem = {
+      type:3  
+    };
+    postData.order = {
+      create_time:'desc',
+    };
+    const callback = (res)=>{
+      if(res.info.data.length>0){
+        self.data.mainData.push.apply(self.data.mainData,res.info.data);
+      }else{
+        self.data.isLoadAll = true;
+        api.showToast('没有更多了','fail');
+      };
+      self.setData({
+        web_mainData:self.data.mainData,
+      });
+      wx.hideLoading();
+    };
+    api.flowLogGet(postData,callback);
+  },
+
+  show(){
+    const self = this;
+    if(self.data.isShow == false){
+      self.setData({
+        isShow:true
+      })
+    }else{
+      self.setData({
+        isShow:false
+      })
+    }
+  },
+
 
 
   pay(){
@@ -113,6 +166,7 @@ Page({
     if(wx.getStorageSync('login').userType == 0){
       self.data.sForm.score = -self.data.sForm.score
     }
+    
     const postData = {
         token:wx.getStorageSync('token'),
         data:{
@@ -120,14 +174,24 @@ Page({
           type:3,
           count:self.data.sForm.score,
           trade_info:'积分消费',
-          opposite_user_no:self.data.userInfoById[0]
+          opposite_user_no:self.data.userInfoById[0],
+          behavior:0
         }
     };
     const callback = (res)=>{
-      api.showToast('支付成功','fail');
-      setTimeout(function(){
-        api.pathTo('/pages/index/index','tab')
-      },1000);
+      if(res&&res.solely_code==100000){
+          setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)
+          self.getMainData();
+          setTimeout(function(){
+            self.show()
+          },1000);         
+        }; 
+    
     };
     api.flowLogAdd(postData,callback)
   },
@@ -139,19 +203,44 @@ Page({
 
   submit(){
     const self = this;
+    if(self.buttonClicked){
+      return;
+    };
+    self.buttonClicked = true;
+    self.setData({
+      buttonClicked: true
+    });
     const pass = api.checkComplete(self.data.sForm);
     if(pass){
       if(self.data.computeData&&self.data.computeData>=self.data.sForm.score){ 
-        if(parseInt(-self.data.todayData)+parseInt(self.data.sForm.score) < parseInt(wx.getStorageSync('info').passage1)){
+        if(parseInt(-self.data.todayData)+parseInt(self.data.sForm.score) <= parseInt(wx.getStorageSync('info').passage1)){
           self.pay();
         }else{
           api.showToast('超过日消费限额','fail')
+          setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)  
         }   
       }else{
         api.showToast('剩余积分不足','fail')
+        setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)  
       }
     }else{
       api.showToast('请输入积分','fail')
+      setTimeout(function(){
+            self.setData({
+              buttonClicked: false
+            });
+            self.buttonClicked = false;
+          }, 1000)  
     }
   }
 

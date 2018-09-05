@@ -3,7 +3,10 @@
 <view style="font-size:18px;color:#808080;width:100%;text-align:center;margin:50px auto;">
 名称:{{web_userInfoById[1]}}
 <view>{{web_userInfoById[2]=='0'?'向用户收款':'向商户支付'}}</view>
+</view>
 
+<view style="font-size:15px;color:red;width:100%;text-align:center;margin:50px auto;">
+(今日剩余额度：{{web_sslimitData}})
 </view>
 
 <view class='pay_box'>
@@ -13,3 +16,30 @@
 
 
 <button type='submit' class='submit' bindtap="submit">确认支付</button>
+
+<view class="qcored" style="{{isShow?'display:block':'display:none'}};z-index:999">
+  <view class="qcored_cont" >
+    <view class="close" bindtap="show" > 
+      <image src="/images/close_icon.png"></image>
+    </view>
+    <view style="font-size:20px;color:red;position:relative;width:280rpx;height:85rpx;margin:0 auto 20rpx">
+      <view class="qcored_bg" style="margin-top:15rpx">
+          <image src="/images/qcored_bg.png"></image>
+      </view>
+      <view style="font-size:20px;color:red;position:absolute;width:280rpx;height:85rpx;top:0;left:0;line-height:85rpx;text-align:center">支付成功</view>
+    </view>
+
+     <view class="qcored_txt" style="font-size:15px;padding:0 20rpx">
+      本次支付<text style="color:#06c1ae">{{web_score}}</text>积分
+    </view> 
+
+    <view class="qcored_txt" style="font-size:15px;padding:0 20rpx;margin-top:20rpx">
+      时间：<text style="color:#666">{{web_mainData[0].create_time}}</text>
+    </view> 
+   
+    <view class="qcored_txt" style="font-size:15px;padding:0 20rpx;margin-top:20rpx">
+      收款方:<text style="color:#666">{{web_userInfoById[1]}}</text>
+    </view> 
+  
+  </view>
+</view>

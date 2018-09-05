@@ -12,16 +12,27 @@
 		<text>积分详情</text>
 	</view>
 	<block wx:for="{{web_mainData}}" wx:key="id">
-	<view class="credit_list flexRowBetween">
+	<view class="credit_list flexRowBetween" style="border-bottom:none">
 		<view class="cre_data">
 			{{item.create_time}}
+		</view>
+		
+		<view class="credit_number">
+			{{item.count}}
+		</view >
+	</view>
+
+	<view class="credit_list flexRowBetween" style="height:60rpx;line-height:60rpx" >
+		<view class="credit_number" wx:if="{{item.count<0}}">
+			商户名称：{{item.UserInfo.name}}
+		</view>
+		<view class="credit_number" wx:else>
+			商户名称：无
 		</view>
 		<view class="adrees">
 			{{item.trade_info}}
 		</view>
-		<view class="credit_number">
-			{{item.count}}
-		</view>
 	</view>
+	
 	</block>
 </view>

@@ -24,3 +24,33 @@ input{
 	position:absolute;
 	bottom:286rpx;
 }
+.regular{
+	padding:0rpx 40rpx;
+	background:#fff;
+
+}
+.regular_cont{
+	width:90%;
+	padding:3% 5%;	
+	border-radius:20rpx;
+	position:relative;
+	border:solid 1px #e0e0e0;
+	border-radius:10rpx;
+}
+.regular_tlt{
+	color:#4c4c4c;
+	position:absolute;
+	top:-25rpx;
+	width:240rpx;
+	height:50rpx;
+	line-height:50rpx;
+	text-align:center;
+	background:#fff;
+	left:50%;
+	margin-left:-120rpx;
+}
+.regular_item{
+	color:#666;
+	margin-top:20rpx;
+	line-height:40rpx;
+}

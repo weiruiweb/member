@@ -9,6 +9,17 @@
 	<view class="userInput"><input type="text"  value="{{web_submitData.trade_info}}" placeholder="请输入账户信息" placeholder-style="line-height:90rpx" data-key="trade_info" bindblur="changeBind" style="height:90rpx"></input></view>
 </view>
 
+<view class="regular" style="margin-top:100px">
+    <view class="regular_cont">
+        <view class="regular_tlt" style="{{fonts[4].font}}">
+            提现规则
+        </view>
+        <view class="regular_item"  style="font-size:15px">
+          请手动输入您的提现金额及账户信息,如“提现金额:50;账户信息:支付宝18829290000” 我们将在两个小时内给您线下转账。提现时间10:00~22:00,其他时间提现我们将在提现时间内给予处理。
+        </view>
+    </view>
+</view>
+
 
 
 

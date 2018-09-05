@@ -58,6 +58,18 @@ Page({
     postData.order = {
       create_time:'desc',
     };
+    postData.getAfter={
+      UserInfo:{
+        tableName:'userInfo',
+        middleKey:'opposite_user_no',
+        key:'user_no',
+        condition:'=',
+        searchItem:{
+          status:1
+        },
+        info:['name'],
+      },
+    };
     const callback = (res)=>{
       if(res.info.data.length>0){
         self.data.mainData.push.apply(self.data.mainData,res.info.data);

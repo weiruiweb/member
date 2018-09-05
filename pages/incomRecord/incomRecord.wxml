@@ -4,16 +4,17 @@
 		<view class="today_income" style="position:relative">
 			<image src="/images/incom_icon.png"></image>
 			<view>
-				<text>今日收入</text><text class="text1">{{web_todayMainData_total}}笔</text>
+				<text>今日收入</text><text class="text1">{{web_todayMainData_total}}笔<text style="font-size:12px;color:#06c1ae">(总计{{web_todayComputeData.FlowLog.countsum}}分)</text></text>
 			</view>
-			<view class="total">共计收入{{web_mainData_total}}笔</view>
+			<view class="total">共计收入{{web_mainData_total}}笔<text style="font-size:12px;color:#06c1ae">(总计{{web_computeData.FlowLog.countsum}}分)</text></view>
 		</view>
 	</view>
 	<view style="position:absolute;top:35px;right:50rpx;display:flex" data-path="/pages/tixian/tixian"  bindtap="intoPath">
 		<view style="border:1px solid #06c1ae;width:50px;height:20px;line-height:20px;font-size:12px;color:#06c1ae;border-radius:10rpx">申请提现</view> 
 	</view>
+
 	<view style="position:absolute;top:35px;left:50rpx;display:flex">
-		<view class="total">总收入{{web_computeData.FlowLog.countsum}}</view>
+		<view class="total">剩余积分{{web_lessComputeData.FlowLog.countsum}}</view>
 	</view>
 
 	<view class="cre_detail">

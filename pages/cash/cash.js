@@ -52,22 +52,6 @@ Page({
 
  
 
-/*  getMonthDaat(){
-    const self = this;
-    const postData = {};
-    postData.token = wx.getStorageSync('token');
-    postData.searchItem = {
-      type:'3',
-      count:['<','0']
-      create_time:['between',[]] 
-    };
-    postData
-    const callback = (res)=>{
-      wx.hideLoading();
-    };
-    api.flowLogGet(postData,callback);
-  },
-*/
 
   getComputeData(){
     const self = this;
@@ -110,13 +94,6 @@ Page({
 
 
 
-/*  getTime(){
-    const self = this;
-  	var timeStampStart = new Date(new Date().setHours(0, 0, 0, 0)) / 1000;
-  	var timeStampEnd = 
-      new Date(new Date().setHours(0, 0, 0, 0)) / 1000 + 24 * 60 * 60-1;
-    self.data.searchItem.create_time = ['between',[timeStampStart,timeStampEnd]];
-  }*/
   
 
  

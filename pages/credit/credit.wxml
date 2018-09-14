@@ -3,13 +3,13 @@
 	<view class="credit_top">
 		<image src="/images/credit_icon1.jpg"></image>
 		<view>
-		<text>目前积分:</text>
+		<text>目前果冻:</text>
 		<text class="cre_number">{{web_computeData.FlowLog.countsum}}分</text>
 		</view>
 	</view>
 	<view class="cre_detail">
 		<image src="/images/credit_icon2.jpg"></image>
-		<text>积分详情</text>
+		<text>果冻详情</text>
 	</view>
 	<block wx:for="{{web_mainData}}" wx:key="id">
 	<view class="credit_list flexRowBetween" style="border-bottom:none">

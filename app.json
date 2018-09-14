@@ -23,7 +23,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "资产管理公司",
+    "navigationBarTitleText": "果果校园",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

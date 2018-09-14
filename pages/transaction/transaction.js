@@ -204,7 +204,7 @@ Page({
           user_no:wx.getStorageSync('info').user_no,
           type:3,
           count:self.data.sForm.score,
-          trade_info:'积分消费',
+          trade_info:'果冻消费',
           opposite_user_no:self.data.userInfoById[0],
           behavior:0
         }
@@ -267,11 +267,11 @@ Page({
     }else{
       api.showToast('请输入积分','fail')
       setTimeout(function(){
-            self.setData({
-              buttonClicked: false
-            });
-            self.buttonClicked = false;
-          }, 1000)  
+        self.setData({
+          buttonClicked: false
+        });
+        self.buttonClicked = false;
+      }, 1000)  
     }
   }
 

@@ -101,4 +101,12 @@ Page({
     api.pathTo(api.getDataSet(e,'path'),'nav');
   },
 
+  onReachBottom() {
+    const self = this;
+    if(!self.data.isLoadAll){
+      self.data.paginate.currentPage++;
+      self.getMainData();
+    };
+  },
+
 })

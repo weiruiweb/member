@@ -17,9 +17,7 @@ Page({
   },
     
 
-  onLoad(){
-    const self = this;
-  },
+ 
 
 
 
@@ -59,6 +57,8 @@ Page({
     };
     api.flowLogCompute(postData,callback);
   },
+
+
 
 
 

@@ -16,7 +16,7 @@
 			<view class="cre_img">
 				<image src="/images/user_icon1.jpg"></image>
 			</view>
-			<text>600积分</text>
+			<text>600果冻</text>
 		</view>
 	</view>
 </view>
@@ -30,7 +30,7 @@
 
 		<view class="user_in" bindtap="credit">
 			<image src="/images/user_icon3.jpg"></image>
-			<view class="text">我的积分</view>
+			<view class="text">我的果冻</view>
 		</view>
 		<view class="user_in" style="border-right:none" bindtap="about">
 			<image src="/images/user_icon4.jpg"></image>

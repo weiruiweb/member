@@ -5,17 +5,18 @@
 <view>{{web_userInfoById[2]=='0'?'向用户收款':'向商户支付'}}</view>
 </view>
 
-<view style="font-size:15px;color:red;width:100%;text-align:center;margin:50px auto;">
+<view style="font-size:18px;color:red;width:100%;text-align:center;margin:50px auto;">
 (今日剩余额度：{{web_sslimitData}})
 </view>
 
 <view class='pay_box'>
-  <view class='pay_txt'><input type='pay' placeholder='请确认支付积分' data-key="score" bindchange="fillChange" ></input></view>
+  <view class='pay_txt'><input type='pay' placeholder='请确认支付果冻' data-key="score" bindchange="fillChange" ></input></view>
 </view>
 
 
 
 <button type='submit' class='submit' bindtap="submit">确认支付</button>
+
 <view style="{{isShow?'display:block':'display:none'}};width:100%;height:100%;background:#fff;opacity:0.5;position:absolute;top:0;z-index:998;">
 </view>
   <view class="qcored" style="{{isShow?'display:block':'display:none'}};z-index:999">
@@ -31,7 +32,7 @@
       </view>
 
        <view class="qcored_txt" style="font-size:15px;padding:0 20rpx">
-        本次支付<text style="color:#06c1ae">{{web_score}}</text>积分
+        本次支付<text style="color:#06c1ae">{{web_score}}</text>果冻
       </view> 
 
       <view class="qcored_txt" style="font-size:15px;padding:0 20rpx;margin-top:20rpx">

@@ -26,6 +26,15 @@ Page({
     self.getLessComputeData();
   },
 
+  onshow(){
+    const self = this;
+    self.getTime();
+    self.getTodayMainData();
+    self.getComputeData();
+    self.getTodayComputeData();
+    self.getLessComputeData(); 
+  },
+
 
 
 

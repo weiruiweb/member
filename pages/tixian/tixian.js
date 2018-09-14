@@ -10,7 +10,6 @@ Page({
 
     submitData:{
       score:'',
-      trade_info:'',
 
     }
 
@@ -81,6 +80,7 @@ Page({
         searchItem:{
           user_no:wx.getStorageSync('info').user_no,
           type:3,
+          status:1
         }
       }
     };
@@ -104,7 +104,7 @@ Page({
           self.flowLogAdd();
         }   
       }else{
-        api.showToast('积分不足','fail');  
+        api.showToast('果冻不足','fail');  
       }   
     }else{
       api.showToast('请补全信息','fail');
